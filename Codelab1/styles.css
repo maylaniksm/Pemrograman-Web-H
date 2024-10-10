@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Warna untuk setiap kolom */
+td:nth-child(1) {
+    background-color: #FFDDC1; /* Kolom 1 warna peach */
+}
+
+td:nth-child(2) {
+    background-color: #FFABAB; /* Kolom 2 warna merah muda */
+}
+
+td:nth-child(3) {
+    background-color: #FFC3A0; /* Kolom 3 warna oranye muda */
+}
+
+td:nth-child(4) {
+    background-color: #FF677D; /* Kolom 4 warna merah cerah */
+}
+
+/* Warna untuk setiap header (th) berbeda */
+th:nth-child(1) {
+    background-color: #4CAF50; /* Kolom 1 warna hijau */
+    color: white;
+}
+
+th:nth-child(2) {
+    background-color: #2196F3; /* Kolom 2 warna biru */
+    color: white;
+}
+
+th:nth-child(3) {
+    background-color: #FF9800; /* Kolom 3 warna oranye */
+    color: white;
+}
+
+th:nth-child(4) {
+    background-color: #F44336; /* Kolom 4 warna merah */
+    color: white;
+}
+
+/* Hover pada baris tetap sama */
+tbody tr:hover {
+    background-color: #e6f7ff;
+}

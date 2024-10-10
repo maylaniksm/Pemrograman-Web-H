@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BimbinganKuy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              yellow: "#F5C53E",
+              blue: "#0062F2",
+              background: "#F5F5F5",
+              green: "#77AE05",
+              orange: "#CA6013",
+              pink: "#EA689C",
+              cyan: "#A9E9F5",
+              gray: "#7e7e7e",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+      #scrollTopBtn {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0; /* Start hidden */
+        visibility: hidden; /* Hidden by default */
+      }
+
+      #scrollTopBtn.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <i class="text-blue text-2xl fa-solid fa-book-open-reader"></i>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900">BimbinganKuy</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <div class="flex space-x-4">
+            <button type="button" class="text-black font-semibold text-sm px-4 py-2 text-center">Sign in</button>
+            <button
+              type="button"
+              class="text-white font-semibold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-sm px-6 py-2 text-center"
+            >
+              Register
+            </button>
+          </div>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-10 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 font-bold text-white md:text-blue bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="mt-16">
+      <div class="bg-yellow p-2">
+        <p class="text-center text-sm">
+          Ingin menjalin partnership bersama kami? <span class="text-blue font-semibold">Mari bicarakan</span>
+        </p>
+      </div>
+      <section class="px-6 max-w-screen-xl mx-auto mt-24 flex">
+        <div class="md:w-1/2">
+          <h3 class="mt-12 text-orange text-lg font-semibold">Sukses bersama BimbinganKuy!</h3>
+          <h1 class="mt-2 text-6xl font-semibold w-[400px]">Belajar dengan tentor berpengalaman</h1>
+          <h3 class="mt-6 text-orange text-lg font-semibold">
+            Jaminan kenaikan niilai dengan pembelajaran yang aktif dan efisien
+          </h3>
+          <div class="flex mt-6">
+            <button
+              type="button"
+              class="font-semibold bg-yellow hover:bg-[#c29b31] rounded-xl text-sm px-6 py-2 text-center flex items-center"
+            >
+              <span><i class="text-xl mr-3 fa-solid fa-circle-play"></i></span>Mulai trial
+            </button>
+            <button type="button" class="font-semibold text-md px-6 py-2 text-center flex items-center">
+              Apa itu BimbinganKuy?
+            </button>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2">
+          <img src="public/images/Group 1.png" alt="" />
+        </div>
+      </section>
+      <section class="mt-24 py-12 bg-blue flex flex-wrap space-x-20 gap-y-10 justify-center overflow-clip">
+        <div class="">
+          <p class="text-white text-center font-bold text-xl">32</p>
+          <p class="mt-2 text-white text-center text-md">
+            <span>Pendidik<br />berpengalaman</span>
+          </p>
+        </div>
+        <div class="">
+          <p class="text-white text-center font-bold text-xl">1203</p>
+          <p class="mt-2 text-white text-center text-md">
+            <span>Siswa<br />aktif</span>
+          </p>
+        </div>
+        <div class="">
+          <p class="text-white text-center font-bold text-xl">+3245</p>
+          <p class="mt-2 text-white text-center text-md">
+            <span>Materi<br />pembelajaran</span>
+          </p>
+        </div>
+        <div class="">
+          <p class="text-white text-center font-bold text-xl">212</p>
+          <p class="mt-2 text-white text-center text-md">
+            <span>Metode<br />pembelajaran</span>
+          </p>
+        </div>
+        <div class="">
+          <p class="text-white text-center font-bold text-xl">105</p>
+          <p class="mt-2 text-white text-center text-md">
+            <span>Fasilitas<br />umum digital</span>
+          </p>
+        </div>
+      </section>
+      <section class="max-w-screen-xl mx-auto mt-24">
+        <h2 class="text-center text-4xl font-medium">
+          Kenapa harus <span class="text-blue font-semibold">BimbinganKuy?</span>
+        </h2>
+        <h3 class="text-center mt-4 text-orange text-lg font-semibold">
+          Jaminan kenaikan niilai dengan pembelajaran yang aktif dan efisien
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 md:px-0 mt-16">
+          <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
+            <i class="py-3 px-4 bg-yellow rounded-md text-2xl fa-solid fa-pen-ruler"></i>
+            <p class="mt-3 font-semibold text-lg">Bimbingan tugas sekolah</p>
+            <p class="text-lg text-gray">
+              Tidak perlu khawatir ketika anak memiliki masalah saat mengerjakan tugas sekolah, dengan bimbing semua
+              akan selesai
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
+            <i class="py-3 px-4 bg-orange rounded-md text-2xl fa-solid fa-headset"></i>
+            <p class="mt-3 font-semibold text-lg">Konsultasi kapan saja</p>
+            <p class="text-lg text-gray">CS bimbingan kami selalu bersedia menjawab pertanyaan anda 24/7</p>
+          </div>
+          <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
+            <i class="py-3 px-4 bg-green-500 rounded-md text-2xl fa-solid fa-book"></i>
+            <p class="mt-3 font-semibold text-lg">Pendampingan Ujian</p>
+            <p class="text-lg text-gray">
+              Kami menyediakan pendampingan belajar intensif untuk mempersiapkan anak menghadapi ujian penting dengan
+              percaya diri.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
+            <i class="py-3 px-4 bg-blue-500 rounded-md text-2xl fa-solid fa-house"></i>
+            <p class="mt-3 font-semibold text-lg">Les Privat di Rumah</p>
+            <p class="text-lg text-gray">
+              Pengajar profesional kami siap datang ke rumah untuk memberikan les privat, membantu anak Anda belajar
+              dengan lebih fokus.
+            </p>
+          </div>
+        </div>
+        <div class="px-6 mt-24 flex flex-col md:flex-row">
+          <img src="public/images/Group 3.png" alt="" />
+          <div>
+            <h3 class="mt-4 text-orange text-lg font-semibold">Belajar santai bersama mentor</h3>
+            <h3 class="mt-2 text-xl font-semibold">Mentor proffessional yang telah tersertifikasi</h3>
+            <p class="mt-4 text-lg text-gray">
+              Setiap mentor di BimbinganKuy dipilih melalui seleksi ketat untuk memastikan kualitas terbaik. Kami menilai
+              kompetensi, pengalaman mengajar, dan kemampuan komunikasi, serta memastikan integritas dan dedikasi
+              tinggi. Dengan ini, para peserta belajar dari mentor ahli yang peduli terhadap perkembangan dan
+              keberhasilan mereka.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="px-6 mt-24 bg-blue">
+      <div class="max-w-screen-xl mx-auto py-10">
+        <div>
+          <i class="text-yellow text-3xl fa-solid fa-book-open-reader"></i>
+          <span class="pl-2 self-center text-3xl font-semibold whitespace-nowrap text-white">BimbinganKuy</span>
+        </div>
+        <p class="pt-2 text-white">Dapatkan informasi lebih lanjut disini</p>
+        <div class="grid grid-rows-6 md:grid-rows-3 grid-flow-col gap-4 mt-6">
+          <div class="flex items-center">
+            <i class="text-2xl text-white fa-brands fa-instagram"></i>
+            <p class="text-xl ml-4 text-white">bimbingankuy.id</p>
+          </div>
+          <div class="flex items-center">
+            <i class="text-2xl text-white fa-brands fa-facebook"></i>
+            <p class="text-xl ml-4 text-white">bimbingankuy.id</p>
+          </div>
+          <div class="flex items-center">
+            <i class="text-2xl text-white fa-brands fa-twitter"></i>
+            <p class="text-xl ml-4 text-white">bimbingankuy_id</p>
+          </div>
+          <div class="flex items-center">
+            <i class="text-2xl text-white fa-regular fa-envelope"></i>
+            <p class="text-xl ml-4 text-white">bimbingankuy.id@gmail.com</p>
+          </div>
+          <div class="flex items-center">
+            <i class="text-2xl text-white fa-solid fa-phone"></i>
+            <p class="text-xl ml-4 text-white">0858-5694-4502</p>
+          </div>
+          <div class="flex items-center">
+            <i class="text-2xl text-white fa-solid fa-location-dot"></i>
+            <p class="text-xl ml-4 text-white">Kantor pusat Jl. Tlogomas Malang</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-center p-8 text-white">Copyright 2022. All rights reserved</p>
+    </footer>
+    <button id="scrollTopBtn" class="fixed bottom-8 right-8 p-3 bg-yellow text-white rounded-full">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      scrollTopBtn.classList.remove("visible");
+
+      var currentScroll;
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > currentScroll) {
+          scrollTopBtn.classList.add("visible");
+          console.log(window.scrollY);
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+        currentScroll = window.scrollY;
+      });
+
+      scrollTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
