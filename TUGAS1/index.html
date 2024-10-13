@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Maylani - Responsive Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .operator-active {
+            background-color: #f59e0b !important; /* Amber-500 */
+            color: #000000 !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-gray-800 bg-opacity-50 rounded-3xl shadow-2xl overflow-hidden w-full max-w-md mx-auto p-6">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-yellow-300 mb-6 animate-pulse">KALKULATOR MAYLANI</h1>
+        <div class="bg-gray-700 bg-opacity-50 rounded-2xl p-4 mb-6 backdrop-filter backdrop-blur-sm">
+            <input type="text" id="display" class="w-full text-right text-2xl sm:text-3xl bg-transparent text-white" readonly>
+        </div>
+        <div class="grid grid-cols-4 gap-2 sm:gap-4">
+            <button class="col-span-2 bg-red-500 hover:bg-red-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">AC</button>
+            <button class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">⌫</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">÷</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">7</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">8</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">9</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">×</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">4</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">5</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">6</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">-</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">1</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">2</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">3</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">+</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">0</button>
+            <button class="bg-blue-400 hover:bg-blue-500 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">.</button>
+            <button class="bg-purple-500 hover:bg-purple-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">^</button>
+            <button class="bg-pink-500 hover:bg-pink-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">%</button>
+            <button class="col-span-4 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full py-3 text-lg sm:text-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-lg">=</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
+        let currentValue = '';
+        let operator = '';
+        let previousValue = '';
+        let activeOperatorButton = null;
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.textContent;
+
+                if (value === 'AC') {
+                    currentValue = '';
+                    operator = '';
+                    previousValue = '';
+                    display.value = '';
+                    if (activeOperatorButton) {
+                        activeOperatorButton.classList.remove('operator-active');
+                        activeOperatorButton = null;
+                    }
+                } else if (value === '⌫') {
+                    currentValue = currentValue.slice(0, -1);
+                    display.value = currentValue;
+                } else if ('+-×÷^%'.includes(value)) {
+                    if (activeOperatorButton) {
+                        activeOperatorButton.classList.remove('operator-active');
+                    }
+                    operator = value;
+                    previousValue = currentValue;
+                    currentValue = '';
+                    button.classList.add('operator-active');
+                    activeOperatorButton = button;
+                } else if (value === '=') {
+                    if (previousValue && currentValue && operator) {
+                        switch (operator) {
+                            case '+':
+                                currentValue = parseFloat(previousValue) + parseFloat(currentValue);
+                                break;
+                            case '-':
+                                currentValue = parseFloat(previousValue) - parseFloat(currentValue);
+                                break;
+                            case '×':
+                                currentValue = parseFloat(previousValue) * parseFloat(currentValue);
+                                break;
+                            case '÷':
+                                currentValue = parseFloat(previousValue) / parseFloat(currentValue);
+                                break;
+                            case '^':
+                                currentValue = Math.pow(parseFloat(previousValue), parseFloat(currentValue));
+                                break;
+                            case '%':
+                                currentValue = parseFloat(previousValue) % parseFloat(currentValue);
+                                break;
+                        }
+                        operator = '';
+                        previousValue = '';
+                        display.value = currentValue;
+                        if (activeOperatorButton) {
+                            activeOperatorButton.classList.remove('operator-active');
+                            activeOperatorButton = null;
+                        }
+                    }
+                } else {
+                    currentValue += value;
+                    display.value = currentValue;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
