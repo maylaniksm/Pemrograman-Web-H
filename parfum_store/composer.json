@@ -1,0 +1,16 @@
+{
+    "name": "parfum-store/app",
+    "description": "A simple PHP project for a perfume store using OOP principles.",
+    "type": "project",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PARFUM_STORE\\": "./"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "license": "MIT"
+}
